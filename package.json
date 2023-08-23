@@ -1,7 +1,7 @@
 {
   "name": "react-alive-outlet",
   "description": "react keep router alive",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Winme",
   "license": "MIT",
   "keywords": [
