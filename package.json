@@ -1,5 +1,5 @@
 {
-  "name": "react-keep-alive",
+  "name": "react-alive-outlet",
   "description": "react keep router alive",
   "version": "0.0.1",
   "author": "Winme",
@@ -11,10 +11,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/WinmezzZ/react-keep-alive.git"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "dev": "concurrently \"yarn build --watch\"",

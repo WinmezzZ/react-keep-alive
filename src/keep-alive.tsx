@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useOutlet, useLocation } from 'react-router-dom';
 import { Offscreen } from './offscreen';
 
-export default function KeepAlive() {
+export default function KeepAliveOutlet() {
   const [outlets, setOutlets] = useState<any[]>([]);
   const location = useLocation();
   const outlet = useOutlet();

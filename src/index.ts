@@ -1,1 +1,1 @@
-export { default as KeepAlive } from './keep-alive';
+export { default as KeepAliveOutlet } from './keep-alive';
