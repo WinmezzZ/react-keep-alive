@@ -1,0 +1,69 @@
+{
+  "name": "react-keep-alive",
+  "description": "react keep router alive",
+  "version": "0.0.1",
+  "author": "Winme",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-router-dom",
+    "keep alive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn build --watch\"",
+    "build": "tsup"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "treeshake": true,
+    "sourcemap": "inline",
+    "minify": true,
+    "clean": true,
+    "dts": true,
+    "splitting": false,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "external": [
+      "react", "react-dom", "react-router-dom"
+    ],
+    "injectStyle": false
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.15.0",
+    "tsup": "7.2.0",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17",
+    "react-router-dom": ">=6"
+  }
+}
