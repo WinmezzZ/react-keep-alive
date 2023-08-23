@@ -1,13 +1,12 @@
 import { Suspense, useRef } from 'react';
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode, SuspenseProps } from 'react';
 
-interface OffscreenProps {
-  children: ReactNode;
+interface OffscreenProps extends SuspenseProps {
   mode: 'visible' | 'hidden';
 }
 
 export const Offscreen: FC<OffscreenProps> = (props) => {
-  const { mode, children } = props;
+  const { mode, children, ...rest } = props;
   const resolveRef = useRef<() => void>();
   if (resolveRef.current) {
     resolveRef.current();
@@ -21,8 +20,12 @@ export const Offscreen: FC<OffscreenProps> = (props) => {
     return <>{children}</>;
   }
   return (
-    <Suspense>
+    <Suspense {...rest}>
       {getChild()}
     </Suspense>
   );
 };
+
+Offscreen.defaultProps = {
+  fallback: null
+}
