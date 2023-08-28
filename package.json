@@ -1,7 +1,7 @@
 {
   "name": "react-alive-outlet",
   "description": "react keep router alive",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Winme",
   "license": "MIT",
   "keywords": [
@@ -21,31 +21,10 @@
     "dev": "concurrently \"yarn build --watch\"",
     "build": "tsup"
   },
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "treeshake": true,
-    "sourcemap": "inline",
-    "minify": true,
-    "clean": true,
-    "dts": true,
-    "splitting": false,
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "external": [
-      "react", "react-dom", "react-router-dom"
-    ],
-    "injectStyle": false
-  },
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -63,8 +42,8 @@
     "typescript": "5.1.6"
   },
   "peerDependencies": {
-    "react": ">=17",
-    "react-dom": ">=17",
+    "react": ">=18",
+    "react-dom": ">=18",
     "react-router-dom": ">=6"
   }
 }

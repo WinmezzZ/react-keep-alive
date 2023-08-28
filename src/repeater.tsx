@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { startTransition, useRef } from "react";
 import type { FC, ReactNode } from "react";
 
 export const Repeater: FC<{
@@ -9,11 +9,15 @@ export const Repeater: FC<{
   const resolveRef = useRef<() => void>();
 
   if (resolveRef.current) {
-    resolveRef.current();
-    resolveRef.current = void 0;
+    startTransition(() => {
+      resolveRef.current?.();
+      resolveRef.current = void 0;
+    });
   }
   if (mode === "hidden") {
-    throw new Promise<void>((resolve) => (resolveRef.current = resolve));
+    startTransition(() => {
+      throw new Promise<void>((resolve) => (resolveRef.current = resolve));
+    });
   }
   return <>{children}</>;
 };
